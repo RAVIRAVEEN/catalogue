@@ -5,7 +5,7 @@ pipeline {
      }
 }
    environment { 
-      packageversion = ' '
+      packageVersion = ' '
     }
     options {
         timeout(time: 1, unit: 'HOURS') 
@@ -27,16 +27,17 @@ pipeline {
     stages {
         stage('get the version') {
             steps {
-               script {
+                script {
                         def packageJson = readJSON file: 'package.json'
                             packageVersion = packageJson.version
-                            echo "application version: $packageversion"
+                            echo "application version: $packageVersion"
                }
             }
         }
         stage('install dependencies') {
             steps {
                     sh """
+
                      install npm
 
                     """
