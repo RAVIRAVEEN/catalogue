@@ -38,7 +38,7 @@ pipeline {
             steps {
                     sh """
 
-                     install npm
+                     npm install
 
                     """
             }
