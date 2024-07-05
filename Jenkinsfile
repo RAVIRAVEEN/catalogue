@@ -39,7 +39,6 @@ pipeline {
                     sh """
 
                      npm install
-                     npm audit fix
 
                     """
             }
@@ -47,7 +46,10 @@ pipeline {
         stage('build') {
             steps {
                 sh  """
-                  "ls --"
+
+                 ls -la
+                 
+
 
                 """
             }
