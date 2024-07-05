@@ -39,6 +39,7 @@ pipeline {
                     sh """
 
                      npm install
+                     npm audit fix
 
                     """
             }
