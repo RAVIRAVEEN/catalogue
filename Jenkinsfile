@@ -60,7 +60,7 @@ pipeline {
         stage ( 'publish artifact') {
 
          steps {
-                  nexusArtifactUploader(
+                  nexusArtifactUploader (
                   nexusVersion: 'nexus3',
                   protocol: 'http',
                   nexusUrl: "${nexusURL}",
