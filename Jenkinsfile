@@ -79,24 +79,24 @@ pipeline {
       }
 
 
-       stage('deploy') {
+    //    stage('deploy') {
 
-            steps {
-                script {
+    //         steps {
+    //             script {
                       
-                      def params [
+    //                   def params [
                        
-                       string(name: 'version', value: "${packageVersion}"),
-                        string(name: 'environment',value:'dev')
+    //                    string(name: 'version', value: "${packageVersion}"),
+    //                     string(name: 'environment',value:'dev')
 
-                      ]
+    //                   ]
                        
-                       build job: "catalogue-deploy", wait: true, parameters:params
-                }
+    //                    build job: "catalogue-deploy", wait: true, parameters:params
+    //             }
                
 
-            }
-        }
+    //         }
+    //     }
            
         // stage('check parms') {
 
