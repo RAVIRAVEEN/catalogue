@@ -22,7 +22,7 @@ pipeline {
     //     choice(name: 'action', choices: ['One', 'Two', 'Three'], description: 'Pick something')
 
     //     password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
-    // }
+    }
 
 //   build
     stages {
@@ -131,4 +131,3 @@ pipeline {
    
     }
 
-}
