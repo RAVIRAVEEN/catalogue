@@ -83,10 +83,10 @@ pipeline {
 
            steps {
                 script {
-                        def params = [
+                            def params = [
                             string(name: 'version', value:  "$packageVersion"),
                             string(name: 'environment', value: "dev")
-                        ]
+                           ]
                         build job: "catalogue-deploy", wait: true, parameters: params
                     }
             }
@@ -94,7 +94,8 @@ pipeline {
             }
         }
            
-        // stage('check parms') {
+           
+                   // stage('check parms') {
 
         //     steps{
         //         sh """
