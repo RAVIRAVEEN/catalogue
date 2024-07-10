@@ -6,7 +6,7 @@ pipeline {
 }
    environment { 
       packageVersion = ' '
-      nexusURL = '172.31.36.245:8081'
+    //   nexusURL = '172.31.36.245:8081'
     }
     options {
         timeout(time: 1, unit: 'HOURS') 
@@ -76,8 +76,28 @@ pipeline {
         ]
      )
          }
-    
+      }
+
+
+       stage('deploy') {
+
+            steps {
+                script {
+                      
+                      def params [
+                       
+                       string(name: 'version', value: "${packageVersion}"),
+                        string(name: 'environment',value:'dev')
+
+                      ]
+                       
+                       build job: "catalogue-deploy", wait: true, parameters:params
+                }
+               
+
             }
+        }
+           
         // stage('check parms') {
 
         //     steps{
