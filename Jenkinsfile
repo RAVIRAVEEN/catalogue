@@ -1,11 +1,9 @@
 #!groovy
+@Library('roboshop-shared-library') _
 
-@Library("roboshop-shared-library") _
-  
-  // responsiblity to pass what type of application and comoponent into the pipeline deccission
+// responsibility to pass what type of application and component is this to pipeline deicssion
 
-
-  def configMap = [
+def configMap = [
     application: "nodejsVM",
     component: "catalogue"
 ]
