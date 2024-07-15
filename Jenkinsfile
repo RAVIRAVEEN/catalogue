@@ -100,7 +100,7 @@ pipeline {
       }
 
 
-       stage('deploy') {
+       stage('Deploy') {
 
             when {
                 params.Deploy = true
