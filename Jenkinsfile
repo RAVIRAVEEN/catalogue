@@ -8,3 +8,10 @@
     application = "nodejsVM",
     comoponent = "component"
   ]
+
+  if ( !  env.BRANCH_NAME.equalsIgnoreCase('main') ){
+    pipelineDecission.decidepipeline(configMap)
+  }
+  else {
+    echo "this is PROD this with CR process"
+  }
