@@ -45,6 +45,26 @@ pipeline {
                     """
             }
         }
+
+        stage('unit tests') {
+            steps {
+                    sh """
+                     echo "here unit tests will run here"
+
+                    """
+            }
+        }
+
+         stage('sonar') {
+            steps {
+                    sh """
+                  sonar-scanner
+                     
+                    """
+            }
+        }
+
+
         stage('build') {
             steps {
                 sh  """
@@ -88,7 +108,7 @@ pipeline {
                             string(name: 'version', value:  "$packageVersion"),
                             string(name: 'environment', value: "dev")
                            ]
-                        build job: "catalogue-deploy", wait: false, parameters: params
+                        build job: "catalogue-deploy", wait: true, parameters: params
                     }
             }
 
