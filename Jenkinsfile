@@ -102,10 +102,10 @@ pipeline {
 
        stage('deploy') {
 
-              when {
-                params.Deploy = "true"
+            when {
+                params.Deploy = true
             }
-           steps {
+              steps {
                 script {
                             def params = [
                             string(name: 'version', value:  "$packageVersion"),
